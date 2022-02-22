@@ -1,0 +1,29 @@
+[package]
+name = "linear-malloc"
+version = "0.1.0"
+authors = ["Mads Marquart <mads@marquart.dk>"]
+edition = "2021"
+
+description = "An ultra simple single-threaded linear allocator"
+keywords = ["cachegrind", "callgrind", "malloc", "allocator"]
+categories = [
+    "development-tools::ffi",
+    "development-tools::profiling",
+    "memory-management",
+    "os",
+]
+readme = "README.md"
+repository = "https://github.com/madsmtm/linear-malloc"
+documentation = "https://docs.rs/linear-malloc/"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "linear_malloc"
+crate-type = ["cdylib"]
+
+[profile.release]
+lto = true
+debug = true
+
+[dependencies]
+libc = "0.2"
